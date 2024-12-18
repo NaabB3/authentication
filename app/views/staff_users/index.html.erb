@@ -30,7 +30,8 @@
 				<%= staf_user.role&.name %>
 			</td>
             <td>
-                <%= link_to 'Edit', edit_staff_user_path(staf_user)  %> 
+                <%= link_to 'Edit', edit_staff_user_path(staf_user)  %> |
+                <%= link_to 'Delete', staff_user_path(staf_user), method: :delete  %> 
             </td>
 
 		</tr>

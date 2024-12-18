@@ -37,6 +37,15 @@ class StaffUsersController < ApplicationController
     end
   end
 
+  def destroy
+		if @staff_user.destroy
+			flash[:notice] = 'Staff user deleted successfully'
+		else
+			flash[:notice] = @staff_user.errors.full_messages.join(",")
+		end
+		redirect_to staff_users_path
+	end
+
 
   def find_staff_user
 		@staff_user = Admin.staff_user.find_by id: params[:id]
