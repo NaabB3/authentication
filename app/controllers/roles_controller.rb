@@ -1,6 +1,7 @@
 class RolesController < ApplicationController
   before_action :authenticate_admin!
-  before_action :find_role, only: [:edit, :update, :destroy]
+  before_action :find_role, only: [:edit, :update, :destroy, :permissions, :store_permissions]
+  before_action :fetch_permissions, only: [:permissions]
 
 
     def index
@@ -43,6 +44,20 @@ class RolesController < ApplicationController
         flash[:notice] = @role.errors.full_messages.join(",")
       end
       redirect_to roles_path
+    end
+
+    def permissions
+      @select_permission_ids = @role.permissions.ids
+    end
+
+    def store_permissions
+      @role.permission_ids = params[:permission_ids]
+      flash[:notice] = 'Permissions were assigned successfully!'
+      redirect_to roles_path
+    end
+
+    def fetch_permissions
+      @permissions = Permission.all
     end
 
     def find_role
