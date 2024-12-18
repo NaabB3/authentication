@@ -2,7 +2,8 @@
 <div>
 <% if admin_signed_in? && !current_admin.super_admin? %>	
     <%= link_to "Update Password", edit_admin_registration_path, class: 'btn btn-primary ml-4 mt-4' %>
-	<%= link_to "Delete Account", registration_path(current_admin), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete, class: 'btn btn-primary ml-4 mt-4' %>    
+	<%= link_to "Delete Account", registration_path(current_admin), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete, class: 'btn btn-primary ml-4 mt-4' %> 
+	<%= link_to "Update Profile", edit_customer_path, class: 'btn btn-primary ml-4 mt-4' %>   
 	<% end %>
 
 </div>

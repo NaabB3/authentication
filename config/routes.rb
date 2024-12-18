@@ -12,11 +12,16 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  
+  get 'customers/edit_customer', to: 'customers#edit_customer', as: 'edit_customer'
+  post 'customers/manage_customer', to: 'customers#manage_customer', as: 'manage_customer'
+
 
   resources :roles
   resources :staff_users
   resources :customers, only: [:edit, :update]
   resources :dashboard, only: [:index]
-  resources :products
   root "dashboard#index"
+
+  
 end
