@@ -7,3 +7,13 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+Role.create(name: 'Customer')
+Role.create(name: 'SuperUser')
+
+#Admin.create(email: 'admin@gmail.com', username: 'Admin', admin_type: 0, password: '123456', password_confirmation: '123456',role_id:2)
+
+# Permission.create(name: 'Can add Products')
+# Permission.create(name: 'Can edit Products')
+# Permission.create(name: 'Can delete Products')
+# Permission.create(name: 'Can view Products')
