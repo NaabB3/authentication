@@ -31,6 +31,8 @@
       </h5>
       <% if admin_signed_in? %>
      	<a class="navbar-brand margin-left text-primary">Welcome <%= current_admin.username %></a>
+      <% c_time = current_admin.last_sign_in_at&.utc&.in_time_zone("Europe/Warsaw") %>
+		    <span class="text-primary">Last Login Time: <%= c_time&.strftime("%d/%B/%Y %I:%M %p")  %></span>
    	<% end %>
 
       <form class="form-inline">

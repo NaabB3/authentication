@@ -25,6 +25,9 @@ Rails.application.routes.draw do
   get 'roles/:id/permissions', to: 'roles#permissions', as: 'permissions'
   post 'roles/:id/store_permissions', to: 'roles#store_permissions', as: 'store_permissions'
 
+  get 'dashboard/lock_accounts', to: 'dashboard#lock_accounts', as: 'lock_accounts'
+  get 'dashboard/:id/unlock_accounts', to: 'dashboard#unlock_accounts', as: 'unlock_accounts'
+
 
   resources :roles
   resources :staff_users
