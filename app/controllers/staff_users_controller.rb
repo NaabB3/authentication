@@ -2,7 +2,7 @@ class StaffUsersController < ApplicationController
 
   before_action :authenticate_admin!
   before_action :fetch_roles, only: [:new, :edit]
-  before_action :find_staff_user, only: [:edit, :update]
+  before_action :find_staff_user, only: [:edit, :update, :destroy]
 
   def index
 		@staff_users = Admin.staff_user
